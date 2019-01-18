@@ -1,0 +1,37 @@
+<h2>Chef | <a href="dishes">Dishes</a></h2>
+<a href="new">Add a Chef</a>
+
+<h3>Check Out our roster of Chefs!</h3>
+@using ChefsDishes.Models;
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Chef ID</th>
+      <th scope="col">Chef Name</th>
+      <th scope="col">Age</th>
+      <th scope="col"># of Dishes</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+
+
+@model List<Chef>
+    @{
+        foreach(var chef in @Model)
+        {
+          int today = DateTime.Today.Year;
+          int BDay = @chef.DOB.Year;
+          int age = today-BDay;
+            <tr>
+                <th scope="row">@chef.ID</th>
+                <td>@chef.FirstName @chef.LastName</td>
+                <td>@age</td>
+                <td>@chef.ChefsDishes.Count</td>
+            </tr>
+        }
+    }
+    
+
+  </tbody>
+</table>

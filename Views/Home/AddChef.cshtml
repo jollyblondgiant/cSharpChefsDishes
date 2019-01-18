@@ -1,0 +1,21 @@
+<h2>Add a Chef!</h2>
+<a href="/">Home</a>
+
+@using ChefsDishes.Models;
+@model Chef
+<form asp-action="NewChef" asp-controller="Home" method="post">
+
+    <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName"></label>
+    <input class="form-control" asp-for="FirstName">
+
+    <span asp-validation-for="LastName"></span>
+    <label asp-for="LastName"></label>
+    <input class="form-control" asp-for="LastName">
+
+    <span asp-validation-for="DOB"></span>
+    <label asp-for="DOB"></label>
+    <input class="form-control" asp-for="DOB">
+
+    <input class="btn btn-primary" type="submit" value="Add Chef!">
+</form>
